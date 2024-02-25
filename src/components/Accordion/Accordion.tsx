@@ -5,9 +5,9 @@ type AccordionPropsType = {
     collapsed: boolean
 }
 
-function Accordion(props: AccordionPropsType) {
+export function Accordion(props: AccordionPropsType) {
     console.log("Accordion rendering")
-    if (props.collapsed === true) {
+    if (props.collapsed) {
         return (
             <div>
                 <AccordionTitle title={props.titleValue}/>
@@ -49,5 +49,3 @@ function AccordionBody() {
         </div>
     )
 }
-
-export default Accordion;
