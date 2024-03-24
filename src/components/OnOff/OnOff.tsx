@@ -1,14 +1,12 @@
 import {useState} from "react";
 
 type TypeOnOff = {
-    on: boolean
+    // on: boolean
 }
 
 export const OnOff = (props: TypeOnOff) => {
 
-    // const [onOff, setOnOff] = useState<boolean>(props.on)
-
-    // setOnOff(props.on)
+    const [onOff, setOnOff] = useState<boolean>(true)
 
     const blockStyle = {
         display: 'flex',
@@ -20,7 +18,7 @@ export const OnOff = (props: TypeOnOff) => {
         width: '50px',
         height: '40px',
 
-        backgroundColor: props.on ? 'green' : 'white',
+        backgroundColor: onOff ? 'green' : 'white',
         // backgroundColor: props.on && 'green',
 
         border: '2px solid black',
@@ -32,7 +30,7 @@ export const OnOff = (props: TypeOnOff) => {
     const offStyle = {
         width: '50px',
         height: '40px',
-        backgroundColor: props.on ? 'white' : 'red',
+        backgroundColor: onOff ? 'white' : 'red',
         border: '2px solid black',
         display: 'flex',
         justifyContent: 'center',
@@ -43,7 +41,7 @@ export const OnOff = (props: TypeOnOff) => {
         width: '20px',
         height: '20px',
         borderRadius: '15px',
-        backgroundColor: props.on ? 'green' : 'red',
+        backgroundColor: onOff ? 'green' : 'red',
         border: '1px solid black',
         display: 'flex',
         alignItems: 'center',
@@ -52,8 +50,8 @@ export const OnOff = (props: TypeOnOff) => {
 
     return (
         <div style={blockStyle}>
-            <div style={onStyle}>On</div>
-            <div style={offStyle}>Off</div>
+            <div style={onStyle} onClick={ () => setOnOff(true) }>On</div>
+            <div style={offStyle} onClick={ () => setOnOff(false) }>Off</div>
 
             <span style={indicatorStyle}></span>
         </div>

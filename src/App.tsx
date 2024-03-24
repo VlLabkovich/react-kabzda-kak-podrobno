@@ -11,9 +11,9 @@ function App(props: any) {
     return (
         <div>
 
-            <OnOff on={true}/>
-            <OnOff on={false}/>
-            <OnOff on={true}/>
+            <OnOff/>
+            <OnOff/>
+            <OnOff/>
 
             <Accordion titleValue={"Menu"}/>
             <Accordion titleValue={"Users"}/>
