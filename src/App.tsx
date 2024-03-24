@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import {Accordion} from "./components/Accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
+import {OnOff} from "./components/OnOff/OnOff";
 
 
 function App(props: any) {
@@ -9,6 +10,10 @@ function App(props: any) {
 
     return (
         <div>
+
+            <OnOff on={true}/>
+            <OnOff on={false}/>
+            <OnOff on={true}/>
 
             <Accordion titleValue={"Menu"}/>
             <Accordion titleValue={"Users"}/>
