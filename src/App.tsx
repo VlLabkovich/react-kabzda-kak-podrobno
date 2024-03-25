@@ -1,8 +1,11 @@
 import React from 'react';
 import './App.css';
-import {Accordion} from "./components/Accordion/Accordion";
-import {Rating} from "./components/Rating/Rating";
-import {OnOff} from "./components/OnOff/OnOff";
+// import {ControlledAccordion} from "./components/Accordion/Accordion";
+import {UncontrolledAccordion} from "./components/Accordion/Accordion";
+// import {ControlledRating} from "./components/Rating/Rating";
+import {UncontrolledRating} from "./components/Rating/Rating";
+
+
 
 
 function App(props: any) {
@@ -11,20 +14,23 @@ function App(props: any) {
     return (
         <div>
 
-            <OnOff/>
-            <OnOff/>
-            <OnOff/>
+            {/*<OnOff/>*/}
+            {/*<OnOff/>*/}
+            {/*<OnOff/>*/}
 
-            <Accordion titleValue={"Menu"}/>
-            <Accordion titleValue={"Users"}/>
+            {/*<ControlledAccordion titleValue={'Menu'} collapsed={false}/>*/}
+            {/*<ControlledAccordion titleValue={'Users'} collapsed={true}/>*/}
 
-            {/*<UncontrolledRating/>*/}
+            <UncontrolledAccordion titleValue={'Menu'}/>
+            <UncontrolledAccordion titleValue={'Users'}/>
 
-            <Rating value={2}/>
-            <Rating value={3}/>
-            <Rating value={4}/>
-            <Rating value={5}/>
-            <Rating value={6}/>
+            {/*<ControlledRating value={1}/>*/}
+            {/*<ControlledRating value={2}/>*/}
+            {/*<ControlledRating value={3}/>*/}
+            {/*<ControlledRating value={4}/>*/}
+            {/*<ControlledRating value={5}/>*/}
+
+            <UncontrolledRating/>
         </div>
     );
 }
