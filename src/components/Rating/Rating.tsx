@@ -58,17 +58,18 @@ type RatingPropsType = {
 
 // HomeWork №2
 //
+
 export const UncontrolledRating = () => {
 
     const[value, setValue] = useState(0)
 
     return (
         <div>
-            <Star selected={value > 0} onClick={() => {setValue(1)}}/>
-            <Star selected={value > 1} onClick={() => {setValue(2)}}/>
-            <Star selected={value > 2} onClick={() => {setValue(3)}}/>
-            <Star selected={value > 3} onClick={() => {setValue(4)}}/>
-            <Star selected={value > 4} onClick={() => {setValue(5)}}/>
+            <Star selected={value > 0} onClick={()=>{setValue(1)}}/>
+            <Star selected={value > 1} onClick={()=>{setValue(2)}}/>
+            <Star selected={value > 2} onClick={()=>{setValue(3)}}/>
+            <Star selected={value > 3} onClick={()=>{setValue(4)}}/>
+            <Star selected={value > 4} onClick={()=>{setValue(5)}}/>
         </div>
     )
 }
@@ -80,15 +81,52 @@ type StarPropsType = {
 
 const Star = ({selected, onClick} : StarPropsType) => {
 
-    const onClickHandler = () => {
-        onClick()
-    }
-
     return (
         // HomeWork №1
-        selected?
-            <span onClick={onClickHandler}> <strong>star</strong></span>
-            :
-            <span onClick={onClickHandler}>star</span>
+        // Refactor
+        <span onClick={() => {onClick()}}>
+                { selected? <strong>star</strong>  : "star" }
+            </span>
+
+        // <span onClick={onClickHandler}> <strong>star</strong></span>
+        // :
+        // <span onClick={onClickHandler}>star</span>
     )
 }
+
+// by Dimych
+// export const UncontrolledRating = () => {
+//
+//     const[value, setValue] = useState(0)
+//
+//     return (
+//         <div>
+//             <Star selected={value > 0} onClick={setValue} value={1}/>
+//             <Star selected={value > 1} onClick={setValue} value={2}/>
+//             <Star selected={value > 2} onClick={setValue} value={3}/>
+//             <Star selected={value > 3} onClick={setValue} value={4}/>
+//             <Star selected={value > 4} onClick={setValue} value={5}/>
+//         </div>
+//     )
+// }
+//
+// type StarPropsType = {
+//     selected: boolean
+//     onClick: (value: 1 | 2 | 3 | 4 | 5) => void
+//     value: 1 | 2 | 3 | 4 | 5
+// }
+//
+// const Star = ({selected, onClick, value} : StarPropsType) => {
+//
+//     return (
+//         // HomeWork №1.1
+//             // Refactor
+//             <span onClick={() => {onClick(value)}}>
+//                 { selected? <strong>star</strong>  : "star" }
+//             </span>
+//
+//             // <span onClick={onClickHandler}> <strong>star</strong></span>
+//             // :
+//             // <span onClick={onClickHandler}>star</span>
+//     )
+// }
