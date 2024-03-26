@@ -18,7 +18,7 @@ function App(props: any) {
 
     return (
 
-        <div>
+        <div className={'App'}>
 
             {/*<OnOffControlled on={onOff} onClick={setOnOff}/>*/}
             <OnOffControlled on={onOff} onClick={setOnOff}/> {onOff.toString()}
