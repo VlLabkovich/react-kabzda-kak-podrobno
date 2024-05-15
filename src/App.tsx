@@ -12,7 +12,8 @@ function App(props: any) {
 
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0)
 
-    const [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
+    const [accordionCollapsedMenu, setAccordionCollapsedMenu] = useState<boolean>(false)
+    const [accordionCollapsedUsers, setAccordionCollapsedUsers] = useState<boolean>(false)
 
     const [onOff, setOnOff] = useState<boolean>(true)
 
@@ -27,8 +28,8 @@ function App(props: any) {
 
             <Rating value={ratingValue} onClick={setRatingValue}/>
 
-            <UncontrolledAccordion titleValue={'Menu'} collapsed={accordionCollapsed} onClick={setAccordionCollapsed}/>
-            <UncontrolledAccordion titleValue={'Users'} collapsed={accordionCollapsed} onClick={setAccordionCollapsed}/>
+            <UncontrolledAccordion titleValue={'Menu'} collapsed={accordionCollapsedMenu} onClick={setAccordionCollapsedMenu}/>
+            <UncontrolledAccordion titleValue={'Users'} collapsed={accordionCollapsedUsers} onClick={setAccordionCollapsedUsers}/>
 
             {/*<ControlledAccordion titleValue={'Menu'} collapsed={false}/>*/}
             {/*<ControlledAccordion titleValue={'Users'} collapsed={true}/>*/}
