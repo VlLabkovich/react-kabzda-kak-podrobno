@@ -35,8 +35,11 @@ function App(props: any) {
             <Accordion
                 titleValue={'Menu'}
                 collapsed={accordionCollapsed}
-                onChange={()=>setAccordionCollapsed(!accordionCollapsed)}
+                onChange={() => {
+                    setAccordionCollapsed(!accordionCollapsed)
+                }}
             />
+
             {/*<Accordion titleValue={'Users'} collapsed={accordionCollapsed}/>*/}
 
             {/*<UncontrolledAccordion titleValue={'Menu'}/>*/}
