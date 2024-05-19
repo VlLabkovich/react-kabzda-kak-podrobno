@@ -41,43 +41,6 @@ function AccordionBody() {
     )
 }
 
-// export const UncontrolledAccordion = ({titleValue, collapsed, onClick}: AccordionPropsType) => {
-//
-//     // let [collapsed, setCollapsed] = useState(true)
-//
-//     return (
-//         <div>
-//             <AccordionTitle title={titleValue} onClick={()=>{onClick((!collapsed))}}/>
-//             {!collapsed && <AccordionBody/>}
-//         </div>
-//     )
-// }
-//
-// type AccordionTitlePropsType = {
-//     title: string
-//     onClick: () => void
-// }
-//
-// const AccordionTitle = ({title, onClick} : AccordionTitlePropsType) => {
-//
-//     return (
-//         <h3 onClick={onClick}>{title}</h3>
-//     )
-// }
-//
-// function AccordionBody() {
-//
-//     return (
-//         <div>
-//             <ul>
-//                 <li>1</li>
-//                 <li>2</li>
-//                 <li>3</li>
-//             </ul>
-//         </div>
-//     )
-// }
-
 // const Accordion = (props: AccordionPropsType) => {
 //     return (
 //         <div>

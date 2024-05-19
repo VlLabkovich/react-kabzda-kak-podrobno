@@ -1,20 +1,20 @@
 import React, {useState} from 'react';
 import './App.css';
-
 import {Rating, RatingValueType} from "./components/Rating/Rating";
-import {OnOffControlled} from "./components/OnOff/OnOff";
-import {UncontrolledAccordion} from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import Accordion from "./components/Accordion/Accordion";
-
+import {UncontrolledAccordion} from "./components/UncontrolledAccordion/UncontrolledAccordion";
+import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
+import {OnOffControlled} from "./components/OnOff/OnOff";
+import {OnOffUncontrolled} from "./components/UncontrolledOnOff/UncontrolledOnOff";
 
 function App(props: any) {
     console.log("App rendering")
 
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0)
-    const [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(true)
+    const [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
 
-    const [accordionCollapsedMenu, setAccordionCollapsedMenu] = useState<boolean>(false)
-    const [accordionCollapsedUsers, setAccordionCollapsedUsers] = useState<boolean>(false)
+    // const [accordionCollapsedMenu, setAccordionCollapsedMenu] = useState<boolean>(false)
+    // const [accordionCollapsedUsers, setAccordionCollapsedUsers] = useState<boolean>(false)
 
     const [onOff, setOnOff] = useState<boolean>(true)
 
@@ -22,28 +22,24 @@ function App(props: any) {
 
         <div className={'App'}>
 
-            {/*<OnOffControlled on={onOff} onClick={setOnOff}/>*/}
             <OnOffControlled on={onOff} onClick={setOnOff}/> {onOff.toString()}
-
-            {/*<OnOffUncontrolled/>*/}
-
-            <Rating value={ratingValue} onClick={setRatingValue}/>
+            <OnOffUncontrolled/>
 
             {/*<UncontrolledAccordion titleValue={'Menu'} collapsed={accordionCollapsedMenu} onClick={setAccordionCollapsedMenu}/>*/}
             {/*<UncontrolledAccordion titleValue={'Users'} collapsed={accordionCollapsedUsers} onClick={setAccordionCollapsedUsers}/>*/}
 
-            <Accordion
-                titleValue={'Menu'}
-                collapsed={accordionCollapsed}
-                onChange={() => {
-                    setAccordionCollapsed(!accordionCollapsed)
-                }}
-            />
+            <UncontrolledAccordion titleValue={'Menu'}/>
+            <UncontrolledAccordion titleValue={'Users'}/>
 
-            {/*<Accordion titleValue={'Users'} collapsed={accordionCollapsed}/>*/}
+            <Accordion titleValue={'Menu'}
+                       collapsed={accordionCollapsed}
+                       onChange={() => {setAccordionCollapsed(!accordionCollapsed)}
+            }/>
 
-            {/*<UncontrolledAccordion titleValue={'Menu'}/>*/}
-            {/*<UncontrolledAccordion titleValue={'Users'}/>*/}
+            {/*<Accordion titleValue={'Users'}*/}
+            {/*           collapsed={accordionCollapsed}*/}
+            {/*           onChange={() => {setAccordionCollapsed(!accordionCollapsed)}*/}
+            {/*}/>*/}
 
             {/*<ControlledRating value={1}/>*/}
             {/*<ControlledRating value={2}/>*/}
@@ -51,7 +47,9 @@ function App(props: any) {
             {/*<ControlledRating value={4}/>*/}
             {/*<ControlledRating value={5}/>*/}
 
-            {/*<UncontrolledRating/>*/}
+            <Rating value={ratingValue} onClick={setRatingValue}/>
+            <hr></hr>
+            <UncontrolledRating/>
         </div>
     );
 }
