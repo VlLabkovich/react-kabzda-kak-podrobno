@@ -1,16 +1,17 @@
 import React, {useState} from 'react';
 import './App.css';
-// import {ControlledAccordion} from "./components/Accordion/Accordion";
-// import {ControlledRating} from "./components/Rating/Rating";
+
 import {Rating, RatingValueType} from "./components/Rating/Rating";
-import {UncontrolledAccordion} from "./components/Accordion/Accordion";
 import {OnOffControlled} from "./components/OnOff/OnOff";
+import {UncontrolledAccordion} from "./components/UncontrolledAccordion/UncontrolledAccordion";
+import Accordion from "./components/Accordion/Accordion";
 
 
 function App(props: any) {
     console.log("App rendering")
 
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0)
+    const [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(true)
 
     const [accordionCollapsedMenu, setAccordionCollapsedMenu] = useState<boolean>(false)
     const [accordionCollapsedUsers, setAccordionCollapsedUsers] = useState<boolean>(false)
@@ -28,11 +29,15 @@ function App(props: any) {
 
             <Rating value={ratingValue} onClick={setRatingValue}/>
 
-            <UncontrolledAccordion titleValue={'Menu'} collapsed={accordionCollapsedMenu} onClick={setAccordionCollapsedMenu}/>
-            <UncontrolledAccordion titleValue={'Users'} collapsed={accordionCollapsedUsers} onClick={setAccordionCollapsedUsers}/>
+            {/*<UncontrolledAccordion titleValue={'Menu'} collapsed={accordionCollapsedMenu} onClick={setAccordionCollapsedMenu}/>*/}
+            {/*<UncontrolledAccordion titleValue={'Users'} collapsed={accordionCollapsedUsers} onClick={setAccordionCollapsedUsers}/>*/}
 
-            {/*<ControlledAccordion titleValue={'Menu'} collapsed={false}/>*/}
-            {/*<ControlledAccordion titleValue={'Users'} collapsed={true}/>*/}
+            <Accordion
+                titleValue={'Menu'}
+                collapsed={accordionCollapsed}
+                onChange={()=>setAccordionCollapsed(!accordionCollapsed)}
+            />
+            {/*<Accordion titleValue={'Users'} collapsed={accordionCollapsed}/>*/}
 
             {/*<UncontrolledAccordion titleValue={'Menu'}/>*/}
             {/*<UncontrolledAccordion titleValue={'Users'}/>*/}
