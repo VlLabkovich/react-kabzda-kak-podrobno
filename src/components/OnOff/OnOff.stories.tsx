@@ -8,12 +8,12 @@ export default {
     component: OnOffControlled,
 }
 
-const callback = action('on or of clicked')
+const callback = action('on or off clicked')
 
-export const OnMode  = () => <OnOffControlled on={true} onClick={callback}/>
-export const OffModel  = () => <OnOffControlled on={false} onClick={callback}/>
+export const OnMode  = () => <OnOffControlled on={true} onChange={callback}/>
+export const OffMode  = () => <OnOffControlled on={false} onChange={callback}/>
 
 export const OnOffControl = () => {
     const [value, setValue] = useState<boolean>(true)
-    return <OnOffControlled on={value} onClick={setValue}/>
+    return <OnOffControlled on={value} onChange={setValue}/>
 }

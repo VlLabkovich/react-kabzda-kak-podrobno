@@ -22,7 +22,7 @@ function App(props: any) {
 
         <div className={'App'}>
 
-            <OnOffControlled on={onOff} onClick={setOnOff}/> {onOff.toString()}
+            <OnOffControlled on={onOff} onChange={setOnOff}/> {onOff.toString()}
             <OnOffUncontrolled/>
 
             {/*<UncontrolledAccordion titleValue={'Menu'} collapsed={accordionCollapsedMenu} onClick={setAccordionCollapsedMenu}/>*/}

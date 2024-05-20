@@ -1,10 +1,10 @@
 
 type TypeOnOff = {
     on: boolean
-    onClick: (on: boolean) => void
+    onChange: (on: boolean) => void
 }
 
-export const OnOffControlled = ({on, onClick} : TypeOnOff) => {
+export const OnOffControlled = ({on, onChange} : TypeOnOff) => {
 
     const blockStyle = {
         display: 'flex',
@@ -48,8 +48,8 @@ export const OnOffControlled = ({on, onClick} : TypeOnOff) => {
 
     return (
         <div style={blockStyle}>
-            <div style={onStyle} onClick={ () => { onClick(true) } }>On</div>
-            <div style={offStyle} onClick={ () => { onClick(false) } }>Off</div>
+            <div style={onStyle} onClick={ () => { onChange(true) } }>On</div>
+            <div style={offStyle} onClick={ () => { onChange(false) } }>Off</div>
 
             <span style={indicatorStyle}></span>
         </div>

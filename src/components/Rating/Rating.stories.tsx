@@ -1,4 +1,3 @@
-import { action } from '@storybook/addon-actions';
 import {Rating, RatingValueType} from "./Rating";
 import React, {useState} from "react";
 
