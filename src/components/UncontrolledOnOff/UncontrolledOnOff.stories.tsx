@@ -1,7 +1,7 @@
 import {OnOffUncontrolled} from "./UncontrolledOnOff";
 
 export default {
-    title: "UncontrolledOnOff",
+    title: "Uncontrolled OnOff",
     component: OnOffUncontrolled,
 }
 

@@ -1,7 +1,7 @@
 import {UncontrolledRating} from "./UncontrolledRating";
 
 export default {
-    title: "UncontrolledRating",
+    title: "Uncontrolled Rating",
     component: UncontrolledRating,
 }
 

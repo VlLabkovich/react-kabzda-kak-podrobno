@@ -4,7 +4,7 @@ import React, {useState} from "react";
 import {OnOffControlled} from "./OnOff";
 
 export default {
-    title: 'OnOff stories',
+    title: 'OnOff',
     component: OnOffControlled,
 }
 
