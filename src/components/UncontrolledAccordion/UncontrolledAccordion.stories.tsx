@@ -10,6 +10,6 @@ export const MenuChangeMode = () => {
     return <UncontrolledAccordion titleValue={'Menu'} />
 }
 
-export const ChangeUncontrolledAccordion = () => {
+export const Users = () => {
     return <UncontrolledAccordion titleValue={'Users'} />
 }

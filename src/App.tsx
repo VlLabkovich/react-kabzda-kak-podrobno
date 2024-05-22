@@ -5,9 +5,10 @@ import Accordion from "./components/Accordion/Accordion";
 import {UncontrolledAccordion} from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
 import {OnOffControlled} from "./components/OnOff/OnOff";
+import {OnOffUncontrolledControlled} from "./components/UncontrolledOnOff/UncontrolledControlledOnOff";
 import {OnOffUncontrolled} from "./components/UncontrolledOnOff/UncontrolledOnOff";
 
-function App(props: any) {
+function App() {
     console.log("App rendering")
 
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0)
@@ -22,46 +23,39 @@ function App(props: any) {
 
         <div className={'App'}>
 
-            <OnOffControlled on={onOff} onChange={setOnOff}/> {onOff.toString()}
-            <OnOffUncontrolled/>
-
-            {/*<UncontrolledAccordion titleValue={'Menu'} collapsed={accordionCollapsedMenu} onClick={setAccordionCollapsedMenu}/>*/}
-            {/*<UncontrolledAccordion titleValue={'Users'} collapsed={accordionCollapsedUsers} onClick={setAccordionCollapsedUsers}/>*/}
+            <Accordion titleValue={'Menu'}
+                       collapsed={accordionCollapsed}
+                       onChange={() => {setAccordionCollapsed(!accordionCollapsed)}
+                       }/>
 
             <UncontrolledAccordion titleValue={'Menu'}/>
             <UncontrolledAccordion titleValue={'Users'}/>
 
-            <Accordion titleValue={'Menu'}
-                       collapsed={accordionCollapsed}
-                       onChange={() => {setAccordionCollapsed(!accordionCollapsed)}
-            }/>
-
-            {/*<Accordion titleValue={'Users'}*/}
-            {/*           collapsed={accordionCollapsed}*/}
-            {/*           onChange={() => {setAccordionCollapsed(!accordionCollapsed)}*/}
-            {/*}/>*/}
-
-            {/*<ControlledRating value={1}/>*/}
-            {/*<ControlledRating value={2}/>*/}
-            {/*<ControlledRating value={3}/>*/}
-            {/*<ControlledRating value={4}/>*/}
-            {/*<ControlledRating value={5}/>*/}
+            <OnOffControlled on={onOff} onChange={setOnOff}/> {onOff.toString()}
+            <OnOffUncontrolled/>
+            <OnOffUncontrolledControlled defaultOnOff={true} onChange={()=>{}} />
 
             <Rating value={ratingValue} onClick={setRatingValue}/>
             <hr></hr>
             <UncontrolledRating/>
+
+            <div>
+                {/*<Accordion titleValue={'Users'}*/}
+                {/*           collapsed={accordionCollapsed}*/}
+                {/*           onChange={() => {setAccordionCollapsed(!accordionCollapsed)}*/}
+                {/*}/>*/}
+
+                {/*<UncontrolledAccordion titleValue={'Menu'} collapsed={accordionCollapsedMenu} onClick={setAccordionCollapsedMenu}/>*/}
+                {/*<UncontrolledAccordion titleValue={'Users'} collapsed={accordionCollapsedUsers} onClick={setAccordionCollapsedUsers}/>*/}
+
+                {/*<ControlledRating value={1}/>*/}
+                {/*<ControlledRating value={2}/>*/}
+                {/*<ControlledRating value={3}/>*/}
+                {/*<ControlledRating value={4}/>*/}
+                {/*<ControlledRating value={5}/>*/}
+            </div>
         </div>
     );
-}
-
-type PageTitlePropsType = {
-    title: string;
-}
-
-function PageTitle(props: PageTitlePropsType) {
-    console.log("PageTitle rendering")
-    return <h1>{props.title}</h1>
-
 }
 
 export default App;
