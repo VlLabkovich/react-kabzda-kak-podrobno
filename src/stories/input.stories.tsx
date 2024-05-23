@@ -31,8 +31,9 @@ export const GetValueOfUncontrolledInputByButtonPress = () => {
     // и отправить на сервер или в локальный стейт
 
     return (
+        // 2 // дальше эту ссылку привязываем к инпуту, к элементу на которого хотим ссылаться
         <>
-            <input ref={inputRef}/> // 2 // дальше эту ссылку привязываем к инпуту, к элементу на которого хотим ссылаться
+            <input ref={inputRef}/>
             <button onClick={save}>save
             </button>
             actual value: {value}
