@@ -7,6 +7,7 @@ import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRa
 import {OnOffControlled} from "./components/OnOff/OnOff";
 import {OnOffUncontrolledControlled} from "./components/UncontrolledOnOff/UncontrolledControlledOnOff";
 import {OnOffUncontrolled} from "./components/UncontrolledOnOff/UncontrolledOnOff";
+import {Select} from "./components/Select/Select";
 
 function App() {
     console.log("App rendering")
@@ -18,6 +19,9 @@ function App() {
     // const [accordionCollapsedUsers, setAccordionCollapsedUsers] = useState<boolean>(false)
 
     const [onOff, setOnOff] = useState<boolean>(true)
+
+    const [data, setData] = useState<string | undefined>(undefined);
+
 
     return (
 
@@ -51,6 +55,18 @@ function App() {
             <Rating value={ratingValue} onClick={setRatingValue}/>
             <hr></hr>
             <UncontrolledRating/>
+
+            <Select title={'HTML select tag in React js'}
+                    data={data}
+                    items={[
+                        {title: "HTML", value: 1},
+                        {title: "CSS", value: 2},
+                        {title: "JavaScript", value: 3},
+                        {title: "React", value: 4},
+                        {title: "Redux", value: 5},
+                    ]}
+                    onChange={(value)=> setData(value)}
+                    onClick={(data)=> alert(`Select element ${data}`)}/>
 
             <div>
                 {/*<Accordion titleValue={'Users'}*/}

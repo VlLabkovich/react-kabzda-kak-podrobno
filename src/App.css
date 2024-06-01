@@ -4,3 +4,19 @@
     align-items: center;
     flex-direction: column;
 }
+
+.main-select {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.select {
+    background-color: rgba(31, 134, 189, 0.79);
+    width: max-content;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center
+}
