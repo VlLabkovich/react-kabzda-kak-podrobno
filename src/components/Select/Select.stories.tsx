@@ -7,7 +7,6 @@ export default {
     component: Select,
 };
 
-const callback = action('Clicked in elemet tag select');
 export const SelectChangeMode = () => {
     const [data, setData] = useState<string | undefined>(undefined);
 

@@ -22,7 +22,6 @@ function App() {
 
     const [data, setData] = useState<string | undefined>(undefined);
 
-
     return (
 
         <div className={'App'}>
