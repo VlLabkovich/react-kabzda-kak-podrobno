@@ -1,4 +1,3 @@
-import {action} from '@storybook/addon-actions'
 import {Select} from "./Select";
 import {useState} from "react";
 
@@ -7,20 +6,31 @@ export default {
     component: Select,
 };
 
-const callback = action('Clicked in elemet tag select');
-export const SelectChangeMode = () => {
-    const [data, setData] = useState<string | undefined>(undefined);
+export const WithValue = () => {
 
-    return <Select title={'HTML select tag in React js'}
-                   data={data}
+    const [value, setValue] = useState('1')
+
+    return <Select onChange={(value)=>setValue(value)}
+
+                   value={value}
                    items={[
-                       {title: "HTML", value: 1},
-                       {title: "CSS", value: 2},
-                       {title: "JavaScript", value: 3},
-                       {title: "React", value: 4},
-                       {title: "Redux", value: 5},
+                       {value: '1', title: 'Minsk'},
+                       {value: '2', title: 'Kiev'},
+                       {value: '3', title: 'Moscow'},
                    ]}
-                   onChange = {(value)=>{setData(value)}}
-                   onClick = {(data)=> alert(`Select element ${data}`)}
     />
-    }
+}
+
+export const WithoutValue = () => {
+
+    const [value, setValue] = useState(null)
+
+    return <Select onChange={(value)=>setValue(value)}
+                   value={value}
+                   items={[
+                       {value: '1', title: 'Minsk'},
+                       {value: '2', title: 'Kiev'},
+                       {value: '3', title: 'Moscow'},
+                   ]}
+    />
+}

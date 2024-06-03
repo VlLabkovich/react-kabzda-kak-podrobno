@@ -2,8 +2,6 @@ import {useState} from "react";
 
 export const UncontrolledRating = () => {
 
-    console.log("Rating rendering")
-
     const[value, setValue] = useState(3)
 
     return (

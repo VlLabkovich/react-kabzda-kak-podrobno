@@ -10,6 +10,7 @@ import {OnOffUncontrolled} from "./components/UncontrolledOnOff/UncontrolledOnOf
 import {Select} from "./components/Select/Select";
 
 function App() {
+
     console.log("App rendering")
 
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0)
@@ -20,8 +21,7 @@ function App() {
 
     const [onOff, setOnOff] = useState<boolean>(true)
 
-    const [data, setData] = useState<string | undefined>(undefined);
-
+    const [value, setValue] = useState<any>('1')
 
     return (
 
@@ -33,13 +33,13 @@ function App() {
                            setAccordionCollapsed(!accordionCollapsed)
                        }}
                        items={
-                        [
-                           {title: 'Dimych', value: 1},
-                           {title: 'Valera', value: 2},
-                           {title: 'Artem', value: 3},
-                           {title: 'Viktor', value: 4}
-                       ]
-            }
+                           [
+                               {title: 'Dimych', value: 1},
+                               {title: 'Valera', value: 2},
+                               {title: 'Artem', value: 3},
+                               {title: 'Viktor', value: 4}
+                           ]
+                       }
                        onClick={() => {
                        }}
             />
@@ -53,21 +53,19 @@ function App() {
             }}/>
 
             <Rating value={ratingValue} onClick={setRatingValue}/>
-            <hr></hr>
+            <br/>
             <UncontrolledRating/>
-
-            <Select title={'HTML select tag in React js'}
-                    data={data}
+            <br/>
+            <Select value={value}
                     items={[
-                        {title: "HTML", value: 1},
-                        {title: "CSS", value: 2},
-                        {title: "JavaScript", value: 3},
-                        {title: "React", value: 4},
-                        {title: "Redux", value: 5},
+                        {value: '1', title: 'Minsk'},
+                        {value: '2', title: 'Kiev'},
+                        {value: '3', title: 'Moscow'},
                     ]}
-                    onChange={(value)=> setData(value)}
-                    onClick={(data)=> alert(`Select element ${data}`)}/>
-
+                    onChange={(value) => {
+                        setValue(value)
+                    }}
+            />
             <div>
                 {/*<Accordion titleValue={'Users'}*/}
                 {/*           collapsed={accordionCollapsed}*/}
