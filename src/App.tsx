@@ -14,14 +14,14 @@ function App() {
     console.log("App rendering")
 
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0)
-    const [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
+    const [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(true)
 
     // const [accordionCollapsedMenu, setAccordionCollapsedMenu] = useState<boolean>(false)
     // const [accordionCollapsedUsers, setAccordionCollapsedUsers] = useState<boolean>(false)
 
     const [onOff, setOnOff] = useState<boolean>(true)
 
-    const [value, setValue] = useState<any>('1')
+    const [value, setValue] = useState<string>('2')
 
     return (
 
