@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useState} from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import {Rating, RatingValueType} from "./components/Rating/Rating";
 import Accordion from "./components/Accordion/Accordion";
@@ -58,9 +58,9 @@ function App() {
             <br/>
             <Select value={value}
                     items={[
-                        {value: '1', title: 'Minsk'},
-                        {value: '2', title: 'Kiev'},
-                        {value: '3', title: 'Moscow'},
+                        // {value: '1', title: 'Minsk'},
+                        // {value: '2', title: 'Kiev'},
+                        // {value: '3', title: 'Moscow'},
                     ]}
                     onChange={(value) => {
                         setValue(value)

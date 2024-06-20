@@ -14,9 +14,9 @@ export const WithValue = () => {
 
                    value={value}
                    items={[
-                       {value: '1', title: 'Minsk'},
-                       {value: '2', title: 'Kiev'},
-                       {value: '3', title: 'Moscow'},
+                       // {value: '1', title: 'Minsk'},
+                       // {value: '2', title: 'Kiev'},
+                       // {value: '3', title: 'Moscow'},
                    ]}
     />
 }
@@ -28,9 +28,9 @@ export const WithoutValue = () => {
     return <Select onChange={(value)=>setValue(value)}
                    value={value}
                    items={[
-                       {value: '1', title: 'Minsk'},
-                       {value: '2', title: 'Kiev'},
-                       {value: '3', title: 'Moscow'},
+                       // {value: '1', title: 'Minsk'},
+                       // {value: '2', title: 'Kiev'},
+                       // {value: '3', title: 'Moscow'},
                    ]}
     />
 }
