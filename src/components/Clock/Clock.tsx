@@ -1,34 +1,31 @@
 import React, {useEffect, useState} from 'react';
-
-// export const Clock = () => {
-//
-//     const [date, setDate] = useState(new Date().toLocaleTimeString())
-//
-//     useEffect(() => {
-//         let intervalId = setInterval(()=>{
-//             setDate(new Date().toLocaleTimeString())
-//         }, 1000)
-//         return ()=> clearInterval(intervalId)
-//     }, [])
-//
-//     return (
-//         <>
-//             <h3>Current Date:</h3>
-//             {date}
-//         </>
-//     );
-// };
+import {DigitalClockView} from "./DigitalClockView";
+import {AnalogClockView} from "./AnalogClockView";
 
 
-const getStringTime = (dateString: number) => dateString < 10 ? '0' + dateString : dateString
+type PropsClockType = {
+    mode: 'digital' | 'analog'
+}
 
-export const Clock = () => {
+
+export const Clock: React.FC<PropsClockType> = ({mode}) => {
 
     const [date, setDate] = useState<Date>(new Date())
 
     // let hoursString = getString(date.getHours())
     // let minutesString = getString(date.getMinutes())
     // let secondsString = getString(date.getSeconds())
+
+    let view;
+
+    switch (mode) {
+        case 'analog':
+            view = <AnalogClockView date={date}/>
+            break;
+        case 'digital':
+        default:
+            view = <DigitalClockView date={date}/>
+    }
 
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -41,14 +38,14 @@ export const Clock = () => {
     }, []);
 
     return (
-        <div>
-            <span>{getStringTime(date.getHours())}</span>
-            :
-            <span>{getStringTime(date.getMinutes())}</span>
-            :
-            <span>{getStringTime(date.getSeconds())}</span>
-        </div>
+        <>
+            {view}
+        </>
     );
 };
+
+export type PropsViewType = {
+    date: Date
+}
 
 export default Clock;
